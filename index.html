@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Finanzas Personales</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Simulador de Finanzas Personales</h1>
+  </header>
+  <main>
+    <section class="form-section">
+      <h2>Ingrese sus datos financieros</h2>
+      <form id="finance-form">
+        <div class="form-group">
+          <label for="income">Ingresos ($):</label>
+          <input type="number" id="income" placeholder="Ejemplo: 3000" required>
+        </div>
+        <div class="form-group">
+          <label for="expenses">Gastos ($):</label>
+          <input type="number" id="expenses" placeholder="Ejemplo: 1500" required>
+        </div>
+        <button type="submit">Calcular</button>
+      </form>
+    </section>
+
+    <section class="results-section">
+      <h2>Resultados</h2>
+      <p id="balance">Saldo Disponible: $0</p>
+      <div class="chart-container">
+        <canvas id="financeChart"></canvas>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Desarrollado por tu Simulador de Finanzas Personales</p>
+  </footer>
+  <script src="js/aplicacion.js"></script>
+</body>
+</html>

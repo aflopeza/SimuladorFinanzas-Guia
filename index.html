@@ -3,41 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulador de Finanzas Personales: Calcula tu saldo disponible e interpreta gráficos interactivos sobre tus ingresos y gastos.">
+  <meta name="author" content="Tu nombre o equipo">
+  <meta name="keywords" content="finanzas, simulador, ingresos, gastos, ahorro, gráficos">
   <title>Simulador de Finanzas Personales</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
     <h1>Simulador de Finanzas Personales</h1>
+    <nav>
+      <ul>
+        <li><a href="#form-section">Formulario</a></li>
+        <li><a href="#results-section">Resultados</a></li>
+      </ul>
+    </nav>
   </header>
+
   <main>
-    <section class="form-section">
+    <!-- Formulario de ingresos y gastos -->
+    <section id="form-section" class="form-section">
       <h2>Ingrese sus datos financieros</h2>
-      <form id="finance-form">
+      <form id="finance-form" aria-labelledby="form-title">
         <div class="form-group">
-          <label for="income">Ingresos ($):</label>
-          <input type="number" id="income" placeholder="Ejemplo: 3000" required>
+          <label for="income">Ingresos (S/.):</label>
+          <input type="number" id="income" name="income" placeholder="Ejemplo: 3000" required>
         </div>
         <div class="form-group">
-          <label for="expenses">Gastos ($):</label>
-          <input type="number" id="expenses" placeholder="Ejemplo: 1500" required>
+          <label for="expenses">Gastos (S/.):</label>
+          <input type="number" id="expenses" name="expenses" placeholder="Ejemplo: 1500" required>
         </div>
-        <button type="submit">Calcular</button>
+        <button type="submit" aria-label="Calcular saldo disponible">Calcular</button>
       </form>
     </section>
 
-    <section class="results-section">
-      <h2>Resultados</h2>
-      <p id="balance">Saldo Disponible: $0</p>
+    <!-- Sección de resultados -->
+    <section id="results-section" class="results-section" aria-labelledby="results-title">
+      <h2 id="results-title">Resultados</h2>
+      <p id="balance" aria-live="polite">Saldo Disponible: S/.0</p>
       <div class="chart-container">
-        <canvas id="financeChart"></canvas>
+        <canvas id="financeChart" aria-label="Gráfico de finanzas personales" role="img"></canvas>
       </div>
     </section>
   </main>
+
   <footer>
-    <p>Desarrollado por tu Simulador de Finanzas Personales</p>
+    <p>Desarrollado por <a href="https://tusitio.com" target="_blank" rel="noopener">Tu Simulador de Finanzas Personales</a></p>
   </footer>
-  <script src="js/aplicacion.js"></script>
+  <script src="js/aplicacion.js" defer></script>
 </body>
 </html>
